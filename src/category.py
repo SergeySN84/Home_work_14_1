@@ -1,4 +1,5 @@
 class Category:
+
     # Атрибуты класса для подсчета категорий и товаров
     category_count = 0
     product_count = 0
