@@ -1,14 +1,20 @@
 class Category:
+    product_count = 0  # класс-атрибут для подсчёта продуктов
 
-    # Атрибуты класса для подсчета категорий и товаров
-    category_count = 0
-    product_count = 0
-
-    def __init__(self, name: str, description: str, products: list):
+    def __init__(self, name, description, products=None):
         self.name = name
         self.description = description
-        self.products = products
+        self._products = products if products is not None else []
+        Category.product_count += len(self._products)
 
-        # Обновляем счетчики
-        Category.category_count += 1
-        Category.product_count += len(products)
+    def add_product(self, product):
+        self._products.append(product)
+        Category.product_count += 1
+
+    @property
+    def products(self):
+        result = ""
+        for product in self._products:
+            result += (f"{product.name}, {product.price} руб."
+                       f" Остаток: {product.quantity} шт.\n")
+        return result
