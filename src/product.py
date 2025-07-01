@@ -1,7 +1,7 @@
 import logging
 
-logging.basicConfig(level=logging.INFO)
 
+logging.basicConfig(level=logging.INFO)
 
 class Product:
     def __init__(self, name, description, price, quantity):

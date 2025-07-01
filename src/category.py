@@ -1,6 +1,7 @@
 class Category:
     product_count = 0  # класс-атрибут для подсчёта продуктов
 
+
     def __init__(self, name, description, products=None):
         self.name = name
         self.description = description
